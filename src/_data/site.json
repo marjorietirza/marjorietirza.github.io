@@ -1,0 +1,20 @@
+{
+  "title": "Marjorie",
+  "strapline": "- Portfolio",
+  "baseUrl": "https://yourURL.com/",
+  "twitter": "marjorietirza",
+  "description": "Showcasing my design work",
+  "favicon": "https://cdn.glitch.global/d0c95c98-52d8-475f-a5a5-6d6d38e85c58/favicon-new.png?v=1657706545510",
+  "featuredImage": "",
+
+  "author": {
+    "name": "Marjorie Eunike",
+    "email": "marjorietirzae@gmail.com",
+    "twitter": "@marjorietirza",
+    "avatar": ""
+  },
+
+  "language": "en",
+
+  "fb_app_id": ""
+}

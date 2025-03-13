@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="{{site.language}}" class="scroll-smooth md:scroll-auto"/>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#22222F">
+    <title>
+        {%- if title -%}
+            {{title}} - {{site.title}}
+        {%- elseif renderData.title -%}
+            {{renderData.title}} - {{site.title}}
+        {%-else-%}
+            {{site.title}} {{site.strapline}}
+        {%- endif -%}
+    </title>
+    <meta name="description" content="{% block description %}{{site.description}}{% endblock %}">
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="Eleventy">
+    <meta name="subject" content="{{site.description}}">
+
+    {% if site.favicon %}<link rel="icon" href="{{ site.favicon }}" type="image/png" />{% endif %}
+
+    {%- block seo -%} 
+    <!-- This allows the SEO block to be overridable and customisable on a per post/page basis -->
+    
+    <!--Twitter Card-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{{site.twitter | replace('@', '') }}">
+    <meta name="twitter:creator" content="@{{site.twitter | replace('@', '') }}">
+    <meta name="twitter:url" content="{{site.baseURL}}{{page.url}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:image" content="{%-if featuredImage-%}{{featuredImage}}{%-else-%}{{site.featuredImage}}{%-endif-%}" />
+    <meta name="twitter:image:alt" content="Shared image from {{ site.title }}" />
+    
+    <!--Schema-->
+    <link rel="author" href="{{site.baseURL}}">
+    <link rel="publisher" href="{{site.baseURL}}">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{ site.description }}">
+    
+    <!-- Facebook OpenGraph -->
+    <meta property="fb:app_id" content="{{site.fb_app_id}}">
+    <meta property="og:url" content="{{site.baseURL}}{{page.url}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:site_name" content="{{site.title}}">
+    <meta name="og:image" content="{%-if featuredImage-%}{{featuredImage}}{%-else-%}{{site.featuredImage}}{%-endif-%}" />
+    <meta name="og:image:alt" content="Shared image from {{ site.title }}" />
+    {%- endblock -%}
+
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+   <script src="https://cdn.tailwindcss.com"></script>
+   
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const backToTopButton = document.getElementById("backToTop");
+
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+    });
+</script>
+
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+</head>
+
+<body id=# {% if bodyClass or home %} class="{{'home ' if page.url == '/'}}{{bodyClass}}"{%- endif -%} >
+
+<div class="max-w-4xl mx-auto px-5 lg:px-12">
+<nav
+      class="sticky z-40 top-0 bg-gray-50 flex items-center justify-between w-full py-2 mx-auto"
+    >
+      <a
+        class="inline-flex items-center justify-center w-16 h-16 rounded-lg"
+        href="/"
+      >
+        <img src="https://cdn.glitch.global/d0c95c98-52d8-475f-a5a5-6d6d38e85c58/mylogo.svg?v=1657708077833" />
+      </a>
+
+  <ul class="flex items-center space-x-4 text-sm lg:text-base font-medium text-gray-500">
+  <!-- <li class="socmed flex justify-center items-center">
+    <a href="https://dribbble.com/marjorieunike">
+      <i class='bx bxl-dribbble'></i>
+    </a>
+  </li> -->
+  <li class="socmed flex justify-center items-center">
+    <a href="https://linkedin.com/in/marjorietirza">
+      <i class='bx bxl-linkedin'></i>
+    </a>
+  </li>
+  <li class="socmed flex justify-center items-center">
+    <a href="mailto:marjorietirzae@gmail.com?subject=Wassaap%20Marjorie&body=Hi%20Marjorie%2C%20I'm..." target="_blank">
+      <i class='bx bx-envelope'></i>
+    </a>
+  </li>
+</ul>
+
+    </nav>
+{%- block main -%}
+{{content | safe}}
+
+<footer class="footer relative max-w-4xl px-5 lg:px-12 my-8 lg:my-12">
+  <p class="footer-text text-slate-400">
+      &copy; 2025 — Designed &amp; coded by Marjorie - V1 finally out after 2 year-long hesitation.
+    </p>
+  <div class="back-to-top">
+    <a href="#" class="back-link" id="backToTop">Back to top</a>
+  </div>
+</footer>
+
+<!-- Floating Status Indicator -->
+  <div class="fixed bottom-8 right-8 z-50">
+    <div class="bg-white/90 backdrop-blur-sm shadow-lg rounded-full px-4 py-2 flex items-center gap-2 border border-gray-200 animated-border">
+      <div class="w-2 h-2 bg-green-500 rounded-full status-dot"></div>
+      <span class="text-sm">Looking for opportunities abroad 🚀</span>
+    </div>
+  </div>
+
+{%- endblock -%}
+</div>
+</body>
+
+</html>
