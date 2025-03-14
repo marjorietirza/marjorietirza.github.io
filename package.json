@@ -6,6 +6,10 @@
   "scripts": {
     "start": "npx tailwind build ./src/styles.css -o ./dist/styles.css & nodemon server.js localhost 8080 & npx eleventy --watch"
   },
+  "scripts": {
+    "build": "npx eleventy"
+  },
+  
   "dependencies": {
     "@11ty/eleventy": "3.0.0",
     "@11ty/eleventy-navigation": "0.1.6",
