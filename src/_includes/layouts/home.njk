@@ -9,49 +9,47 @@ templateClass: tmpl-home
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 mt-4">
       {%- for post in collections.posts -%}
-        {%- if post.data.status == "show" -%}
-          <!-- Make the entire card clickable by wrapping everything in an <a> -->
-          <a href="{{ post.url }}" class="block bg-white rounded-lg shadow-sm border border-black/5 transition-transform transform hover:scale-95">
-            <!-- Thumbnail sticks to the edges of the card with no padding -->
-            <picture>
-  <source srcset="{{ post.data.thumbnail | replace('.webp', '-small.webp') }}" media="(max-width: 600px)">
-  <source srcset="{{ post.data.thumbnail | replace('.webp', '-medium.webp') }}" media="(max-width: 1200px)">
-  <img class="rounded-t-lg w-full object-cover" 
-       src="{{ post.data.thumbnail }}" 
-       alt="Thumbnail for {{ post.data.title }} by {{ post.data.client }}" 
-       width="800" height="450" 
-       loading="lazy" />
-</picture>
+  {%- if post.data.status == "show" -%}
+    <a href="{{ post.url }}" class="block bg-white rounded-lg shadow-sm border border-black/5 transition-transform transform hover:scale-95">
+      
+      <!-- Responsive Image + No Lazy Loading for First Post -->
+      <picture>
+        <source srcset="{{ post.data.thumbnail | replace('.webp', '-small.webp') }}" media="(max-width: 600px)">
+        <source srcset="{{ post.data.thumbnail | replace('.webp', '-medium.webp') }}" media="(max-width: 1200px)">
+        <img class="rounded-t-lg w-full object-cover" 
+             src="{{ post.data.thumbnail }}" 
+             alt="Thumbnail for {{ post.data.title }} by {{ post.data.client }}" 
+             width="800" height="450" 
+             {% if loop.first %} fetchpriority="high" {% else %} loading="lazy" {% endif %} />
+      </picture>
 
+      <!-- Content inside the card -->
+      <div class="p-4">
+        <!-- Title -->
+        <h6 class="text-lg font-semibold mb-1 text-slate-700">
+          {{ post.data.title }}
+        </h6>
 
-            <!-- Content inside the card -->
-            <div class="p-4">
-              <!-- Title -->
-              <h6 class="text-lg font-semibold mb-1 text-slate-700">
-                {{ post.data.title }}
-              </h6>
+        <!-- Client Info -->
+        <p class="text-gray-500 text-sm mb-2">
+          {{ post.data.client }}
+        </p>
 
-              <!-- Client Info -->
-              <p class="text-gray-500 text-sm mb-2">
-                {{ post.data.client }}
-              </p>
+        <!-- Tags as pills, excluding "posts" -->
+        <div class="flex flex-wrap gap-2">
+          {% for tag in post.data.tags %}
+            {% if tag != "posts" %}
+              <span class="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-500 lg:text-sm">
+                {{ tag }}
+              </span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </a>
+  {%- endif -%}
+{%- endfor -%}
 
-              <!-- Tags as pills, excluding "posts" -->
-              <div class="flex flex-wrap gap-2">
-                {% for tag in post.data.tags %}
-                  {% if tag != "posts" %}
-                    <span
-                      class="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-500 lg:text-sm"
-                    >
-                      {{ tag }}
-                    </span>
-                  {% endif %}
-                {% endfor %}
-              </div>
-            </div>
-          </a>
-        {%- endif -%}
-      {%- endfor -%}
 </div>
 
   </div>
