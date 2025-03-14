@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 /* Root Variables */
@@ -306,11 +310,11 @@ hr {
   animation: border-pulse 2s infinite;
 }
 
-img{
+img {
   border-radius: 0.5rem;
 }
 
-em{
+em {
   text-align: center;
   color: var(--color-text-state);
   opacity: 0.6;

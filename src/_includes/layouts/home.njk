@@ -13,7 +13,16 @@ templateClass: tmpl-home
           <!-- Make the entire card clickable by wrapping everything in an <a> -->
           <a href="{{ post.url }}" class="block bg-white rounded-lg shadow-sm border border-black/5 transition-transform transform hover:scale-95">
             <!-- Thumbnail sticks to the edges of the card with no padding -->
-            <img class="rounded-t-lg w-full object-cover" src="{{ post.data.thumbnail }}" alt="{{ post.data.title }} Thumbnail" loading="lazy" />
+            <picture>
+  <source srcset="{{ post.data.thumbnail | replace('.webp', '-small.webp') }}" media="(max-width: 600px)">
+  <source srcset="{{ post.data.thumbnail | replace('.webp', '-medium.webp') }}" media="(max-width: 1200px)">
+  <img class="rounded-t-lg w-full object-cover" 
+       src="{{ post.data.thumbnail }}" 
+       alt="Thumbnail for {{ post.data.title }} by {{ post.data.client }}" 
+       width="800" height="450" 
+       loading="lazy" />
+</picture>
+
 
             <!-- Content inside the card -->
             <div class="p-4">
