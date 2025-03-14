@@ -14,14 +14,17 @@ templateClass: tmpl-home
       
       <!-- Responsive Image + No Lazy Loading for First Post -->
       <picture>
-        <source srcset="{{ post.data.thumbnail | replace('.webp', '-small.webp') }}" media="(max-width: 600px)">
-        <source srcset="{{ post.data.thumbnail | replace('.webp', '-medium.webp') }}" media="(max-width: 1200px)">
-        <img class="rounded-t-lg w-full object-cover" 
-             src="{{ post.data.thumbnail }}" 
-             alt="Thumbnail for {{ post.data.title }} by {{ post.data.client }}" 
-             width="800" height="450" 
-             {% if loop.first %} fetchpriority="high" {% else %} loading="lazy" {% endif %} />
-      </picture>
+  <source srcset="{{ post.data.thumbnail | replace('.webp', '-small.webp') }}" media="(max-width: 600px)">
+  <source srcset="{{ post.data.thumbnail | replace('.webp', '-medium.webp') }}" media="(max-width: 1200px)">
+  <!-- Default fallback if responsive images fail -->
+  <img class="rounded-t-lg w-full object-cover" 
+       src="{{ post.data.thumbnail }}" 
+       alt="Thumbnail for {{ post.data.title }} by {{ post.data.client }}" 
+       width="800" height="450"
+       onerror="this.onerror=null; this.src='{{ post.data.thumbnail }}';" 
+       {% if loop.first %} fetchpriority="high" {% else %} loading="lazy" {% endif %} />
+</picture>
+
 
       <!-- Content inside the card -->
       <div class="p-4">
