@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: Quiz Yourself on CPNS and BUMN tryouts
+title: Seasonal Quiz for CPNS/BUMN Test Prep
 client: Atma
 year: 2023
 thumbnail: "/visuals/quizzes_1x.webp"
@@ -26,113 +26,146 @@ As the **sole product designer**, I led the transformation of **Kurma**, a seaso
 
 The result? **More than 20,000 users** participated in the CPNS/BUMN quiz—**nearly double** Kurma’s original user base.
 
-![Image Description](/visuals/kurma_cpns.webp) 
-*Landing screen: Kurma vs CPNS/BUMN Quiz* 
+![Landing screen: Kurma vs CPNS/BUMN Quiz](/visuals/kurma_cpns.webp)  
 
 ---
 
 ## 1. Understanding the Challenge
 
-### Problem Statement
+### Who I Designed This For  
+This platform was built for:  
+- **CPNS & BUMN test-takers** who need an **engaging, structured, and gamified way** to prepare for highly competitive exams - who might look for jobs while waiting for or after receiving the result.  
+- **Atma app users** who already enjoyed the platform.  
+- **Growth stakeholders** who wanted a new pool to acquire users.  
+
+### When I Did Research & The Result  
+
+Research was conducted **before the redesign** to validate user needs:  
+
+1. **Interviews with successful CPNS/BUMN applicants** to understand:  
+   - **Test structure** (timing, question distribution).  
+   - **Common challenges** (e.g., lack of structured practice, engagement drop-off).  
+   - **Preferred study habits** (gamification, ranking systems, progress tracking).  
+
+2. **Data analysis from Kurma’s user behavior** showed:  
+   - **Users spent 2.3x longer per session** when engaged in gamified quizzes.  
+   - **Leaderboard visibility increased return sessions**.  
+
+These insights guided design decisions for **retaining engagement while introducing structured test preparation**.  
+
+### Problem Statement  
 
 > ##### "How might we create an engaging and scalable CPNS/BUMN preparation platform?"
 
-### Key Insights
+### How the Research Result Impacts Design Decisions  
 
-- **Real Exam Structure Matters**  
-  I interviewed friends who passed the CPNS/BUMN exams to **understand the test format, scoring system, and study pain points**.
-- **Gamification Works**  
-  Kurma had proven engagement, with a **2.3x increase in session time per user/day**.
-- **Mobile-Only Experience**  
-  Since the app was mobile-only, all designs needed to be **optimized for smaller screens**.
+**Key Research Findings → Direct Design Solutions:**  
+✅ **Test-Taking Structure Matters** → Implemented **real exam format**, including **section-based quizzes** and **scoring mirroring the real test**.  
+✅ **Leaderboard Increases Retention** → Improved **leaderboard ranking logic**, ensuring it **reflects real test scores**.  
+✅ **Gamification Drives Engagement** → Integrated **points, ranking system, and competitive incentives**.  
+✅ **Users Prefer Mobile-Only Study Tools** → Optimized UI for **small screens, one-hand navigation**.  
 
 ---
 
 ## 2. Designing the Solution
 
-### Feature Set & Gamification
+### Feature Set & Gamification  
 
 The new app retained **Kurma’s intuitive navigation** while adding test prep elements:
 
-✅ **Quizzes** structured like the real CPNS/BUMN tests
+✅ **Quizzes** structured like the real CPNS/BUMN tests  
+✅ **Leaderboard System**: Motivates users by ranking scores.  
+✅ **Points-Based Scoring**: +5 points for correct answers (mirroring the real test).  
+✅ **Learn Module**: Aggregates CPNS/BUMN-related articles.  
+✅ **Test Resumption**: Users can pause and continue their test anytime.  
 
-✅ **Leaderboard System**: Motivates users by ranking scores.
+![Key features of the Quiz](/visuals/quiz_features.webp)  
 
-✅ **Points-Based Scoring**: +5 points for correct answers (mirroring the real test).
-
-✅ **Learn Module**: Aggregates CPNS/BUMN-related articles.
-
-✅ **Test Resumption**: Users can pause and continue their test anytime.
-
-![Image Description](/visuals/quiz_features.webp) 
-*Key features of the Quiz* 
-
-### Adapting the Leaderboard
+### Adapting the Leaderboard  
 
 One of the main design challenges was **reformatting Kurma’s leaderboard** to fit **CPNS/BUMN ranking structures**, ensuring it accurately reflected **test completion and score progression**.
 
-![Image Description](/visuals/leaderboard_adj.webp) 
-*Kurma vs. new CPNS/BUMN leaderboard designs* 
+![Kurma vs. new CPNS/BUMN leaderboard designs](/visuals/leaderboard_adj.webp)  
 
 ---
 
-## 3. UX/UI Considerations
+## 3. Iterations & Process  
 
-### Mobile-First Optimization
+The design went through multiple iterations:  
 
-- **Small-Screen Adaptability**: Since it's mobile-only, layouts were designed for **smaller screens**, ensuring easy readability.
-- **Quick Navigation**: A **Floating Action Button (FAB)** allows users to start tests immediately.
+### **Iteration 1: Initial Wireframes**  
+- Focused on **migrating Kurma’s gamification to a structured test format**.  
+- **Challenge:** Early wireframes didn’t fully capture **test-taking anxiety**—needed a **realistic time-based experience**.  
+- **Solution:** Added a **timer and section-based breakdown**.
 
-### Time Constraints & Trade-Offs
+### **Iteration 2: User Flow Adjustments**  
+- **Challenge:** Users needed an **easy way to resume tests**.  
+- **Solution:** Introduced a **pause & resume feature**, allowing users to continue where they left off.
 
-Due to an extremely **short timeline**, no usability testing was conducted before launch. However, I focused on:
+### **Iteration 3: Leaderboard Refinements**  
+- **Challenge:** The **initial leaderboard** didn’t differentiate between **partial and fully completed tests**.  
+- **Solution:** Adjusted ranking logic to **prioritize complete test scores** over fragmented attempts.
 
-- **Keeping test-taking structured yet flexible** (allowing pauses/resumptions).
-- **Ensuring leaderboard visibility** (easy access motivates competition).
-- **Prioritizing core test-taking features** over additional gamification mechanics.
-
-![Image Description](/visuals/test_leaderboard.webp) 
-*Quiz & Leaderboard access* 
-
----
-
-## 4. Measuring Success
-
-Since the app was a seasonal release, impact was measured by:
-
-📈 **Engagement Metrics**
-
-- Number of users who started quizzes
-- Test completion rate
-- Average questions answered per session
-- Number of users who climbed the leaderboard
-
-> **More than 20,000 users** participated (compared to Kurma’s **13,000+ users**).
-
-![Image Description](/visuals/activity_comparison.webp) 
-*Kurma vs CPNS/BUMN comparison - visualization made using Claude AI*
+### **Final Design Implementation**  
+- Optimized **touch targets and navigation** for mobile users.  
+- **Finalized leaderboard UI** with **progress visibility** to enhance engagement.  
 
 ---
 
-## 5. Lessons Learned & Future Improvements
+## 4. UX/UI Considerations  
 
-### Key Takeaways
+### Mobile-First Optimization  
 
-- **Leaderboards drive competition**: A simple, easy-to-access leaderboard significantly increased motivation.
-- **Mobile-first design is crucial**: Ensuring tests fit small screens improved usability.
+- **Small-Screen Adaptability**: Since it's mobile-only, layouts were designed for **smaller screens**, ensuring easy readability.  
+- **Quick Navigation**: A **Floating Action Button (FAB)** allows users to start tests immediately.  
 
-### What I’d Improve
+### Time Constraints & Trade-Offs  
 
-- **Better Navigation for Test-Takers**: Adding the ability to **move between questions before final submission**—similar to **IELTS answer sheets**—would enhance the experience.
-- **More User Testing**: Given more time, I’d conduct usability tests before launch.
+Due to an extremely **short timeline**, no usability testing was conducted before launch. However, I focused on:  
+
+- **Keeping test-taking structured yet flexible** (allowing pauses/resumptions).  
+- **Ensuring leaderboard visibility** (easy access motivates competition).  
+- **Prioritizing core test-taking features** over additional gamification mechanics.  
+
+![Quiz & Leaderboard access](/visuals/test_leaderboard.webp)  
 
 ---
 
-## 6. Final Outcome
+## 5. Measuring Success  
 
-The CPNS/BUMN app successfully transformed **Kurma** into a **highly engaging test prep platform**, proving that **gamification + structured learning = increased retention**.
+Since the app was a seasonal release, impact was measured by:  
 
-📌 **Next Steps**: Future iterations could include **adaptive learning paths, detailed analytics, and mock exams** to further improve learning outcomes.
+📈 **Engagement Metrics**  
+- Number of users who started quizzes  
+- Test completion rate  
+- Average questions answered per session  
+- Number of users who climbed the leaderboard  
 
-![Image Description](/visuals/cpnsbumn_complete.webp) 
-*CPNS/BUMN Quiz Screens* 
+> **More than 20,000 users** participated (compared to Kurma’s **13,000+ users**).  
+
+![Kurma vs CPNS/BUMN comparison - visualization made using Claude AI](/visuals/activity_comparison.webp)  
+
+---
+
+## 6. Lessons Learned & Future Improvements  
+
+### Key Takeaways  
+
+- **Leaderboards drive competition**: A simple, easy-to-access leaderboard significantly increased motivation.  
+- **Mobile-first design is crucial**: Ensuring tests fit small screens improved usability.  
+
+### What I’d Improve  
+
+- **Better Navigation for Test-Takers**: Adding the ability to **move between questions before final submission**—similar to **IELTS answer sheets**—would enhance the experience.  
+- **More User Testing**: Given more time, I’d conduct usability tests before launch.  
+
+---
+
+## 7. Final Outcome  
+
+The CPNS/BUMN app successfully transformed **Kurma** into a **highly engaging test prep platform**, proving that **gamification + structured learning = increased retention**.  
+
+📌 **Next Steps**: Future iterations could include **adaptive learning paths, detailed analytics, and mock exams** to further improve learning outcomes.  
+
+![CPNS/BUMN Quiz Screens](/visuals/cpnsbumn_complete.webp)  
+
