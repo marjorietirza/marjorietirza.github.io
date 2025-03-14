@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "npx tailwind build ./src/styles/styles.css -o ./dist/styles.css & nodemon server.js localhost 8080 & npx eleventy --watch"
+    "start": "npx tailwind build ./src/styles.css -o ./dist/styles.css & nodemon server.js localhost 8080 & npx eleventy --watch"
   },
   "dependencies": {
     "@11ty/eleventy": "3.0.0",
